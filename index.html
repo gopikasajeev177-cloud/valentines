@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zeyy❤️</title>
+  
+  <!-- Google Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 40px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: #fff;
+      color: #ff4f7b;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    /* Hearts Animation */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 24px;
+      animation: floatUp 5s linear forwards;
+      color: #fff;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Second Screen */
+    .love-screen {
+      display: none;
+      text-align: center;
+      color: #fff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .love-screen h1 {
+      font-size: 3.2rem;
+      margin-bottom: 15px;
+    }
+
+    .love-screen p {
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- First Screen -->
+  <div class="container" id="questionScreen">
+    <h1> Monuu will you be my Valentine? 💖</h1>
+    <button class="btn" onclick="sayYes()">Yes 💘</button>
+  </div>
+
+  <!-- Second Screen -->
+  <div class="love-screen" id="loveScreen">
+  <h1>YAYY!! 🥰</h1>
+  <p>I love youuu Monuu❤️</p>
+
+<div class="gif-wrapper">
+  <div class="tenor-gif-embed"
+       data-postid="3086095384629424756"
+       data-share-method="host"
+       data-width="100%"
+       data-aspect-ratio="1.2">
+    <a href="https://tenor.com/view/couple-couple-hug-squeeze-squish-squishy-gif-3086095384629424756">
+      Cute couple hug GIF
+    </a>
+  </div>
+</div>
+
+<script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+
+  <script>
+    function sayYes() {
+      // Show hearts
+      for (let i = 0; i < 30; i++) {
+        createHeart();
+      }
+
+      // Switch screen after short delay
+      setTimeout(() => {
+        document.getElementById('questionScreen').style.display = 'none';
+        document.getElementById('loveScreen').style.display = 'block';
+      }, 800);
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+      heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>
